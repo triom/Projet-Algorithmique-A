@@ -1,9 +1,14 @@
 import random
+# importer le package
+import networkx
 
 
 def generer_graphe():
-    #nombreSommets = int(input("Donnez un nombre de sommets\t"))
-    nombreSommets = 3
+
+    # créer un graphe vide non-oreintée
+    G = networkx.Graph()
+    nombreSommets = int(input("Donnez un nombre de sommets\t"))
+    #nombreSommets = 5
     graphe_aleatoire = [
         [0 for i in range(nombreSommets)]for j in range(nombreSommets)]
     for i in range(0, nombreSommets):
