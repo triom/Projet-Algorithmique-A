@@ -81,4 +81,29 @@ def degenerate_liste(liste, ordre):
 				voisins.append(voisin)
 		degenerateListe.append(voisins)
 	return degenerateListe
- 
+
+
+def no_exist_lower_neightbors(liste_degenerate, clique, ordre, j):
+	"""
+	Teste si parmis les sommets connecté à la clique ayant un plus faible
+	ordre que j (et donc les autres sommets de la clique), l'un d'eux est
+	connecté à tous les sommets de la clique.
+	:param liste_degenerate: Liste d'adjacence dégénéré
+	:param clique: Table de hachage contenant la clique
+	:param ordre: Un tableau donnant un ordre de dégénérecence, indexé par sommet
+	:param: Sommet de la clique ayant le plus faible ordre.
+	:return: Vrai si aucun sommet existe remplissant la condition.
+	"""
+	for x in clique:
+		for ancetre in liste_degenerate[x]:
+			if ordre[ancetre] > ordre[j]:
+				continue
+			clique_rencontree = 0
+			for descendant in liste_degenerate[ancetre]:
+				if ordre[descendant] < ordre[ancetre]:
+					break
+				elif descendant in clique:
+					clique_rencontree += 1
+			if clique_rencontree == len(clique):
+				return False
+	return True
