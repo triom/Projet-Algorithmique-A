@@ -1,25 +1,27 @@
 import random
-# importer le package
-import networkx
 
 
-def generer_graphe():
-
-    # créer un graphe vide non-oreintée
-    G = networkx.Graph()
+def generer_graphe_aleatoire():
+    #recuperer le nombre de sommets
     nombreSommets = int(input("Donnez un nombre de sommets\t"))
-    #nombreSommets = 5
-    graphe_aleatoire = [
-        [0 for i in range(nombreSommets)]for j in range(nombreSommets)]
+
+    #initialiser notre matrice vide
+    graphe_aleatoire = [[0 for i in range(nombreSommets)]
+                        for j in range(nombreSommets)]
+    #boucler sur
     for i in range(0, nombreSommets):
         for j in range(0, nombreSommets):
+            #generer une probabilité aleatoire entre 0 et 1 pour obtenir notre graphe aléatoire
             valeurProbilite = random.random()
-            if (i != j) and valeurProbilite > 0.2:
+            #ne prendre que des probabilités superieurs a 0.1
+            if (i != j) and valeurProbilite > 0.1:
+                #assigné la valeur 1 aux voisins de chaque sommet dans le graphe
                 graphe_aleatoire[i][j] = 1
             else:
                 break
+    # afficher la matrice d'adjacence
     for i in range(len(graphe_aleatoire)):
         print(graphe_aleatoire[i])
 
-    # reste a stocker les graphes et afficher soit la liste d'adjacence ou la matrice
-generer_graphe()
+
+#generer_graphe_aleatoire()
