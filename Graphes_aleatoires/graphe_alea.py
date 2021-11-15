@@ -6,7 +6,7 @@ def generer_graphe_aleatoire_aux(nombreSommets):
     #initialiser notre matrice vide
     graphe_aleatoire = [[0 for i in range(nombreSommets)]
                         for j in range(nombreSommets)]
-    #boucler sur
+    #boucler sur le nombre de sommets
     for i in range(0, nombreSommets):
         for j in range(0, nombreSommets):
             #generer une probabilité aleatoire entre 0 et 1 pour obtenir notre graphe aléatoire
@@ -30,4 +30,4 @@ def generer_graphe_aleatoire():
     n = int(input("Donnez un nombre de sommets\t"))
     generer_graphe_aleatoire_aux(n)
     temps_fin = timeit.timeit()
-    print("Temps d'éxecution--- %s seconds ---" % (temps_fin - temps_debut))
+    print("Temps d'éxecution---: %s seconds " % (temps_debut - temps_fin))
