@@ -1,5 +1,5 @@
 from Graphes_aleatoires.graphe_alea import generer_graphe_aleatoire
-from Graphes_aleatoires.Barabasi_Albert import Barabasi_Albert
+#from Graphes_aleatoires.Barabasi_Albert import Barabasi_Albert
 
 if __name__ == "__main__":
     print("-> Generation des graphes aleatoire\n")

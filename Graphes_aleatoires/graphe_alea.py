@@ -15,15 +15,12 @@ def generer_graphe_aleatoire_aux(nombreSommets):
             if (i != j) and valeurProbilite > 0.1:
                 #assigné la valeur 1 aux voisins de chaque sommet dans le graphe
                 graphe_aleatoire[i][j] = 1
+                graphe_aleatoire[j][i] = 1
             else:
                 break
     # afficher la matrice d'adjacence
     for i in range(len(graphe_aleatoire)):
         print(graphe_aleatoire[i])
-
-    # afficher la matrice d'adjacence 
-    for i in range(0, nombreSommets):
-        print("[", i, "]")
 
 
 def generer_graphe_aleatoire():
