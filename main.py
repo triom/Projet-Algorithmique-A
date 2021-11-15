@@ -1,10 +1,5 @@
-#import generer_graphe_barabasi
-#from graphe_alea import *
-# from generer_graphe_barabasi import *
-from random import randrange
-import random
-
-from graphe_alea import generer_graphe_aleatoire
+from Graphes_aleatoires.graphe_alea import generer_graphe_aleatoire
+from Graphes_aleatoires.Barabasi_Albert import Barabasi_Albert
 
 if __name__ == "__main__":
     print("-> Generation des graphes aleatoire\n")
@@ -13,7 +8,7 @@ if __name__ == "__main__":
     print("-> Enumération des cliques avec L'algorithme de Bron Kerbosch\n")
     print("\t3:-> Version standard\n")
     print("\t4:-> Version améliorée\n")
-    print("-> Enumération des cliques Partie 3\n")
+    print("-> Amelioration énumération des cliques Partie 3\n")
     print("\t5:->Algo 1\n")
     print("\t6:-> Algo 2\n")
     print("7:-> Quitter\n")

@@ -1,10 +1,8 @@
+import timeit
 import random
 
 
-def generer_graphe_aleatoire():
-    #recuperer le nombre de sommets
-    nombreSommets = int(input("Donnez un nombre de sommets\t"))
-
+def generer_graphe_aleatoire_aux(nombreSommets):
     #initialiser notre matrice vide
     graphe_aleatoire = [[0 for i in range(nombreSommets)]
                         for j in range(nombreSommets)]
@@ -23,5 +21,16 @@ def generer_graphe_aleatoire():
     for i in range(len(graphe_aleatoire)):
         print(graphe_aleatoire[i])
 
+    # afficher la matrice d'adjacence 
+    for i in range(0, nombreSommets):
+        print("[", i, "]")
 
-#generer_graphe_aleatoire()
+
+def generer_graphe_aleatoire():
+    #recuperer le temps de début
+    temps_debut = timeit.timeit()
+    #recuperer le nombre de sommets
+    n = int(input("Donnez un nombre de sommets\t"))
+    generer_graphe_aleatoire_aux(n)
+    temps_fin = timeit.timeit()
+    print("Temps d'éxecution--- %s seconds ---" % (temps_fin - temps_debut))
